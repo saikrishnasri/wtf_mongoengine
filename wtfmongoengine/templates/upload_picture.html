@@ -1,0 +1,40 @@
+ <html>
+  <head>
+    <title>Upload for {{doc.name}}</title>
+  </head>
+  <body>
+    <h1>Upload a Picture for "{{doc.name}}"</h1>
+    <p>
+      NOTE: Only PNG files are supported for this demo
+    </p>
+    <p>
+      <font color="red"><i>{{errmsg}}</i></font>
+    </p>
+    <form action="" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+      <p>
+        File: <input type="file" name="picture_file">
+      </p>
+      <p>
+        Caption: <input type="text" name="caption">
+      </p>
+      <p>
+        FirstName:<input type="text" name="firstName">
+      </p>
+      <p>
+        LastName:<input type="text" name="lastName">
+      </p>
+      <p>
+        <button type="submit" name="upload_picture">
+          Upload
+        </button>
+      </p>
+    </form>
+    <hr>
+    <ul>
+        <li>
+          <a href="/">Return to Main</a>
+        </li>
+    </ul>
+  </body>
+</html>

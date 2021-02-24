@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>{{doc.name}}</title>
+  </head>
+  <body>
+    <h1>{{doc.name}}</h1>
+    <p>
+      <i>{{doc.tagline}}</i>
+    </p>
+    
+    <h3>Pictures</h3>
+    <ul>
+      {% for pic in doc.pictures %}
+        <li>
+          <img src="/img/{{doc.name}}.{{loop.index0}}.png" width="100%"/>
+          <br/>
+          <i>{{pic.caption}}</i>
+          <i>{{doc.firstName}}</i>
+        </li>
+      {% else %}
+        <i>No pictures yet.</i>
+      {% endfor %}
+    </ul>
+    <hr>
+    <ul>
+        <li>
+          <a href="/upload/{{doc.name}}">Upload Picture</a>
+        </li>
+        <li>
+          <a href="/">Return to Main</a>
+        </li>
+    </ul>
+  </body>
+</html>
